@@ -12,7 +12,7 @@
     # Check if reboot is required
     - name: check if system reboot is required
       become: true
-      stat:
-        path: /var/run/reboot-required
+      #stat:
+      #  path: /var/run/reboot-required
       reboot:
-
+        reboot_timeout: 300
