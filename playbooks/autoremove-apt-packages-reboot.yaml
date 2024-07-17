@@ -3,16 +3,12 @@
 
   become: yes
   tasks:
-    # Upgrade packages
-    - name: upgrade apt packages
+    - name: autoremove apt packages
       become: true
       apt:
         autoremove: yes
 
-    # Check if reboot is required
-    - name: check if system reboot is required
+    - name: reboot the server
       become: true
-      #stat:
-      #  path: /var/run/reboot-required
       reboot:
         reboot_timeout: 300
